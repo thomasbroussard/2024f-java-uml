@@ -4,6 +4,14 @@ public class Customer {
     private String address;
     private String name;
 
+    public Customer(String address, String name){
+        this.name = name;
+        this.address = address;
+    }
+    public Customer(){
+
+    }
+
     public String getAddress() {
         return address;
     }
