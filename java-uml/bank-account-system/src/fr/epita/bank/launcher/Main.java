@@ -19,6 +19,12 @@ public class Main {
         account.setBalance(2000);
         //2000 euros on the account, what would be the gain for the customer?
 
+        double balance = account.getBalance();
+        double gain = balance * account.getInterestRate();
+        account.setBalance(balance + gain);
+
+        System.out.println(account);
+
 
 
     }

@@ -20,4 +20,13 @@ public class SavingsAccount extends CustomerAccount{
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    @Override
+    public String toString() {
+        return "SavingsAccount{" +
+                "interestRate=" + interestRate +
+                ", customer=" + customer +
+                ", balance=" + balance +
+                '}';
+    }
 }
