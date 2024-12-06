@@ -25,6 +25,11 @@ public class Main {
 
         System.out.println(account);
 
+        //the customer wants to buy :
+        // - 5 (ounce) units of GOLD stock,
+        // - 160 units of Apple actions.
+        // they are respectively at 100€ and 6,7€.
+        // The initial balance is set to 1000€
 
 
     }
