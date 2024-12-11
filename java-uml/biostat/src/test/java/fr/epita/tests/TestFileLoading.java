@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalDouble;
 
 public class TestFileLoading {
 
@@ -25,6 +27,7 @@ public class TestFileLoading {
             //"Alex",   "M",   41,       74,      170
             Person person = new Person();
             String[] parts = line.split(",");
+            System.out.println(Arrays.deepToString(parts));
             person.setName(parts[0].trim());
             person.setGender(parts[1].trim());
             person.setAge(Integer.parseInt(parts[2].trim()));
@@ -33,8 +36,20 @@ public class TestFileLoading {
             persons.add(person);
         }
         System.out.println(persons.size());
+        double average = 0;
+        for(Person person : persons){
+            average = average + person.getAge();
+        }
+        average = average / persons.size();
+        System.out.println(" average age: " + average);
 
+        double avg = persons.stream()
+               // .mapToInt(p -> p.getAge())
+                .mapToInt(Person::getAge)
+                .average()
+                .getAsDouble();
 
+        System.out.println(avg);
 
     }
 }
