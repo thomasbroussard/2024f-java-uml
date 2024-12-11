@@ -43,8 +43,6 @@ public class Main {
         double goldOrderCost = goldOrder.getQuantity() * goldOrder.getUnitPrice();
 
         System.out.println("total cost:"  + (appleOrderCost + goldOrderCost));
-
-
     }
 
 }
