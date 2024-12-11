@@ -1,6 +1,8 @@
 package fr.epita.tests;
 
 import fr.epita.biostat.datamodel.Person;
+import fr.epita.biostat.services.PersonCSVService;
+import fr.epita.biostat.services.PersonDataService;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,41 +15,12 @@ import static java.util.stream.Collectors.groupingBy;
 public class TestFileLoading {
 
     public static void main(String[] args) throws IOException {
-        File file =  new File("./biostat/biostat.csv");
-        if (!file.exists()){
-            System.out.println("file does not exists");
-            return;
-        }
-        System.out.println("file exists, proceeding with data loading");
-        List<String> lines = Files.readAllLines(file.toPath());
-        System.out.println(lines);
-        lines.remove(0);
-        List<Person> persons = new ArrayList<>();
-        for (String line : lines){
-            //"Alex",   "M",   41,       74,      170
-            Person person = new Person();
-            String[] parts = line.split(",");
-            System.out.println(Arrays.deepToString(parts));
-            person.setName(parts[0].trim());
-            person.setGender(parts[1].trim());
-            person.setAge(Integer.parseInt(parts[2].trim()));
-            person.setHeight(Integer.parseInt(parts[3].trim()));
-            person.setWeight(Integer.parseInt(parts[4].trim()));
-            persons.add(person);
-        }
-        System.out.println(persons.size());
-        double average = 0;
-        for(Person person : persons){
-            average = average + person.getAge();
-        }
-        average = average / persons.size();
-        System.out.println(" average age: " + average);
+        PersonCSVService service = new PersonCSVService();
+        PersonDataService personDataService = new PersonDataService();
 
-        double avg = persons.stream()
-               // .mapToInt(p -> p.getAge())
-                .mapToInt(Person::getAge)
-                .average()
-                .getAsDouble();
+
+        List<Person> persons = service.readPersons("./biostat/biostat.csv");
+        double avg = personDataService.computeAverage(persons);
 
 
         Map<Integer, List<Person>> personsByAge = persons
