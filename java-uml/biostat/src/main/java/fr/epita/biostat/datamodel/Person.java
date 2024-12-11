@@ -47,4 +47,15 @@ public class Person {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", height=" + height +
+                ", weight=" + weight +
+                '}';
+    }
 }

@@ -5,10 +5,10 @@ import fr.epita.biostat.datamodel.Person;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalDouble;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
 
 public class TestFileLoading {
 
@@ -49,6 +49,22 @@ public class TestFileLoading {
                 .average()
                 .getAsDouble();
 
+
+        Map<Integer, List<Person>> personsByAge = persons
+                .stream()
+                .collect(groupingBy(Person::getAge));
+
+        Map<Integer, List<Person>> personsByHeight = persons
+                .stream()
+                .collect(groupingBy(Person::getHeight));
+
+
+        Map<String, List<Person>> personsByGender = persons
+                .stream()
+                .collect(groupingBy(Person::getGender));
+
+
+        System.out.println(personsByGender);
         System.out.println(avg);
 
     }
