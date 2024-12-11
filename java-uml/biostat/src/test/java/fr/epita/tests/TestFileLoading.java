@@ -63,8 +63,13 @@ public class TestFileLoading {
                 .stream()
                 .collect(groupingBy(Person::getGender));
 
+        Map<String, Long> countOfpersonsByGender = persons
+                .stream()
+                .collect(groupingBy(Person::getGender, Collectors.counting()));
+
 
         System.out.println(personsByGender);
+        System.out.println(countOfpersonsByGender);
         System.out.println(avg);
 
     }
