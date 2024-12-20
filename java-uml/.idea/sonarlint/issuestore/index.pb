@@ -53,3 +53,5 @@ Fbiostat/src/main/java/fr/epita/biostat/services/PersonDataService.java,0\e\0e9
 .biostat/src/test/java/fr/epita/tests/Main.java,8\f\8f027dce4d213e2271d603558aec8377f8fe9374
 g
 7biostat/src/test/java/fr/epita/tests/ChartsTesting.java,e\a\ea45718978c3e3aa44f5c0daac720d5f78a1945f
+d
+4biostat/src/test/java/fr/epita/tests/ChartUtils.java,7\1\71f1650ba9d48b8c5a77eb3c437dd6cb0ef46e24

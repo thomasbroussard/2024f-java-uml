@@ -1,23 +1,41 @@
 package fr.epita.tests;
 
-import org.knowm.xchart.SwingWrapper;
-import org.knowm.xchart.XYChart;
-import org.knowm.xchart.XYChartBuilder;
-import org.knowm.xchart.XYSeries;
+import org.knowm.xchart.*;
 import org.knowm.xchart.style.Styler;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-public class ChartsTesting {
+public class ChartUtils {
 
+    //only for demo
     public static void main(String[] args) {
-        XYChart chart = getChart();
+        //XYChart chart = getFakeDataScatterPlot();
+
+        CategoryChart chart = getBarChart("Gender distribution", "gender", "count");
+
+        chart.addSeries("gender",
+                    Arrays.asList("M", "F"),
+                    Arrays.asList(11, 7)
+        );
+        displayChart(chart);
+    }
+
+    public static void displayChart(CategoryChart chart) {
         new SwingWrapper<>(chart).displayChart();
     }
 
-    public static XYChart getChart() {
+    public static CategoryChart getBarChart(String name,String xTitle, String yTitle){
+        CategoryChart chart = new CategoryChartBuilder()
+                .width(800)
+                .height(600)
+                .title(name)
+                .xAxisTitle(xTitle)
+                .yAxisTitle(yTitle)
+                .build();
+        return chart;
+    }
+
+    public static XYChart getFakeDataScatterPlot() {
 
         // Create Chart
         XYChart chart = new XYChartBuilder()
