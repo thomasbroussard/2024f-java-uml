@@ -49,3 +49,7 @@ u
 Ebiostat/src/main/java/fr/epita/biostat/services/PersonCSVService.java,8\8\8881699aff5f8bf3df9e5b0745d181f7807aa3e1
 v
 Fbiostat/src/main/java/fr/epita/biostat/services/PersonDataService.java,0\e\0e9a57bb0e2f1eaff759667c20b615aea8420fcd
+^
+.biostat/src/test/java/fr/epita/tests/Main.java,8\f\8f027dce4d213e2271d603558aec8377f8fe9374
+g
+7biostat/src/test/java/fr/epita/tests/ChartsTesting.java,e\a\ea45718978c3e3aa44f5c0daac720d5f78a1945f
