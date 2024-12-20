@@ -1,0 +1,5 @@
+# Created at 2024-12-20T12:00:04.480
+Boot Manifest-JAR contains absolute paths in classpath 'S:\Work\ae\Epita\workspaces\2024f-uml-ais\java-uml\biostat\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

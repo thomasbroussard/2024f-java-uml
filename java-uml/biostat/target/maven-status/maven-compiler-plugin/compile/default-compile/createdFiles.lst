@@ -1,0 +1,3 @@
+fr\epita\biostat\services\PersonDataService.class
+fr\epita\biostat\services\PersonCSVService.class
+fr\epita\biostat\datamodel\Person.class
