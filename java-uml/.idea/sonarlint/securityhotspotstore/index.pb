@@ -13,14 +13,10 @@ h
 8bank-account-system/src/fr/epita/bank/launcher/Main.java,4\0\40ad7a185bc52a85fe2fd94daba769d349b757bc
 o
 ?bank-account-system/src/fr/epita/bank/datamodel/StockOrder.java,c\4\c46647c14e35569d49e5b02e0f41750864581d08
-@
-untitled/pom.xml,a\d\ad32662c66e9226254edbc1868caafbccaa2cfad
 ?
 biostat/pom.xml,c\c\ccc76c4fd2fc52405c714cfce75d5a476c185f28
 l
 <biostat/src/main/java/fr/epita/biostat/datamodel/Person.java,c\d\cd90cd21f54ded106dd44daac904ab39cac527ce
-Z
-*biostat/src/test/java/TestFileLoading.java,3\1\31875ff20d2bd144f27a7e25c84ffff97466964b
 i
 9biostat/src/test/java/fr/epita/tests/TestFileLoading.java,2\e\2e0cbbfb38c5cace347a0b9842699c05874c5783
 C
@@ -49,8 +45,6 @@ G.idea/sonarlint/issuestore/c/d/cd90cd21f54ded106dd44daac904ab39cac527ce,d\0\d0
 Q.idea/sonarlint/securityhotspotstore/c/6/c675cd48e1e84de54ee6f7422e597ce162b02a08,5\3\53ffd232b7dc5311f93dce7d2e19e071139fafe5
 w
 G.idea/sonarlint/issuestore/c/6/c675cd48e1e84de54ee6f7422e597ce162b02a08,5\f\5f337472653c7b8a2f929f31c909ba6df19e7d60
-v
-Fbiostat/src/main/java/fr/epita/biostat/datamodel/PersonCSVService.java,1\2\12cefa5f3b71cd0191f5ddcb07de4363cffa2ce6
 u
 Ebiostat/src/main/java/fr/epita/biostat/services/PersonCSVService.java,8\8\8881699aff5f8bf3df9e5b0745d181f7807aa3e1
 v
