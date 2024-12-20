@@ -20,7 +20,10 @@ public class ChartsTesting {
     public static XYChart getChart() {
 
         // Create Chart
-        XYChart chart = new XYChartBuilder().width(800).height(600).build();
+        XYChart chart = new XYChartBuilder()
+                .width(800)
+                .height(600)
+                .build();
 
         // Customize Chart
         chart.getStyler().setDefaultSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Scatter);
@@ -31,13 +34,18 @@ public class ChartsTesting {
         // Series
         List<Double> xData = new LinkedList<Double>();
         List<Double> yData = new LinkedList<Double>();
+        List<Double> xData2 = new LinkedList<Double>();
+        List<Double> yData2 = new LinkedList<Double>();
         Random random = new Random();
         int size = 1000;
         for (int i = 0; i < size; i++) {
-            xData.add(random.nextGaussian() / 1000);
+            xData.add(random.nextGaussian() / 1000 );
+            xData2.add(random.nextGaussian() / 1200 );
             yData.add(-1000000 + random.nextGaussian());
+            yData2.add(-1000010 + random.nextGaussian());
         }
         chart.addSeries("Gaussian Blob", xData, yData);
+        chart.addSeries("Other Gaussian Blob", xData2, yData2);
 
         return chart;
     }
