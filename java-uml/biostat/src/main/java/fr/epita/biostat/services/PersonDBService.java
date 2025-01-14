@@ -58,9 +58,11 @@ public class PersonDBService {
     public List<Person> get(String name) throws ReadPersonException {
         List<Person> results = new ArrayList<>();
         String sqlSelect =
-                "SELECT name, gender, age, height, weight FROM PERSONS";
+                "SELECT name, gender, age, height, weight FROM PERSONS WHERE name = ?";
+
         try (Connection connection = getConnection()) {
             PreparedStatement selectStatement = connection.prepareStatement(sqlSelect);
+            selectStatement.setString(1, name);
             ResultSet resultSet = selectStatement.executeQuery();
             while (resultSet.next()) {
                 Person p = new Person();
