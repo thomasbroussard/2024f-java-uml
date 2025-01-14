@@ -9,26 +9,33 @@ import java.util.List;
 
 public class PersonDBService {
 
-    public PersonDBService() throws SQLException {
+    public PersonDBService() {
         Connection connection =
-                getConnection();
+                null;
+        try {
+            //TODO check alternatives here
+            connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "CREATE TABLE IF NOT EXISTS  PERSONS(" +
+                            "name varchar(255)," +
+                            "gender varchar(255)," +
+                            "age int," +
+                            "height int," +
+                            "weight int" +
+                            ")"
+            );
 
-        PreparedStatement preparedStatement = connection.prepareStatement(
-                "CREATE TABLE IF NOT EXIST PERSONS(" +
-                        "name varchar(255)," +
-                        "gender varchar(255)," +
-                        "age int," +
-                        "height int," +
-                        "weight int" +
-                        ")"
-        );
+            preparedStatement.execute();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
-        preparedStatement.execute();
-        connection.close();
+
     }
 
     private static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:h2:mem:test", "test", "test");
+        return DriverManager.getConnection("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", "test", "test");
     }
 
     public void create(Person person) throws SQLException {
@@ -81,6 +88,7 @@ public class PersonDBService {
 
     }
 
+    //TODO
     public List<Person> getAll() throws SQLException {
 
         String sqlSelect =
@@ -96,6 +104,6 @@ public class PersonDBService {
             System.out.println(resultSet.getInt("weight"));
         }
         connection.close();
-
+        return null;
     }
 }
